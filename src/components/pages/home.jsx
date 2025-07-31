@@ -1,3 +1,6 @@
+import Cupcakes from "../card/cupCakes";
+import Servicios from "../sections/servicios";
+
 function Home() {
   return (
     <div>
@@ -15,6 +18,8 @@ function Home() {
           </button>
         </div>
       </div>
+      <Cupcakes peticion={"cupcakes?color=Rosa"} />
+      <Servicios peticion={"servicios"} />
     </div>
   );
 }

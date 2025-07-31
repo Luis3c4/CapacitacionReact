@@ -27,7 +27,7 @@ function Cupcake({ imagen, sabor, color, precio, descripcion }) {
       <h2 className="text-xl font-semibold mb-2">{color}</h2>
       <p className="text-gray-600">sabor:{sabor}</p>
       <p className="text-gray-600">precio: {precio}</p>
-      <p className="text-gray-600">{descripcion}</p>
+      <p className="text-gray-600 text-center p-2">{descripcion}</p>
       <p className="text-gray-700">
         Estado:{vendido ? " vendido" : " a la venta"}
       </p>
