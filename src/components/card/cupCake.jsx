@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+
+
 function Cupcake({ imagen, sabor, color, precio, descripcion }) {
   const [vendido, setVendido] = useState(false);
   const [reservado, setReservado] = useState(false);
@@ -52,5 +55,11 @@ function Cupcake({ imagen, sabor, color, precio, descripcion }) {
     </div>
   );
 }
-
+Cupcake.propTypes = {
+  imagen: PropTypes.string.isRequired,
+  sabor: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  precio: PropTypes.number,
+  descripcion: PropTypes.string.isRequired
+}
 export default Cupcake;

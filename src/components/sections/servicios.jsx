@@ -1,7 +1,13 @@
 import useFetch from "../hooks/useFetch";
 
 function Servicios({peticion}) {
-    const servicios = useFetch(peticion);
+    const [servicios, error] = useFetch(peticion);
+    if (!servicios || servicios.length === 0) {
+        return <div>No hay servicios disponibles</div>;
+    }
+    if (error) {
+        return <div>Error fetching servicios: {error.message}</div>;
+    }
     return ( 
         <div className="container mx-auto p-4 flex flex-wrap">
             {

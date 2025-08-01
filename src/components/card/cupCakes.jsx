@@ -1,7 +1,13 @@
 import Cupcake from "./cupCake";
 import useFetch from "../hooks/useFetch";
 function Cupcakes({peticion,tittle}) {
-  const cupcakes = useFetch(peticion)
+  const [cupcakes,error] = useFetch(peticion)
+  if (!cupcakes || cupcakes.length === 0) {
+    return <div>No hay cupcakes disponibles</div>;
+  }
+  if (error) {
+    return <div>Error fetching cupcakes: {error.message}</div>;
+  }
   return (
     <div className="container mx-auto p-4">
       {tittle && (
